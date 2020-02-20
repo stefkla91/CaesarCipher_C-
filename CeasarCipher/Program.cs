@@ -43,18 +43,18 @@ namespace CeasarCipher
         /// <param name="mode">Mode input - 0=Encode, 1=Decode</param>
         static void Run(int mode)
         {
-            string cipherKeyStr;
+            string keyInput;
             string cipher;
             int cipherKey;
 
             //read the cipher key
             Console.WriteLine("Please enter a Cipher Key");
 
-            cipherKeyStr = Console.ReadLine();
+            keyInput = Console.ReadLine();
             //convert the string to and int
             try
             {
-                cipherKey = Int32.Parse(cipherKeyStr);
+                cipherKey = Int32.Parse(keyInput);
             }
             catch (FormatException e)
             {
@@ -77,7 +77,7 @@ namespace CeasarCipher
             }
         }
         /// <summary>
-        ///     Applies the Ceaser Cipher
+        ///     Applies the Caesar Cipher
         ///     
         ///     Encoding and Decoding is the same mathematical process. 
         ///     Only the "direction" of the key changes
@@ -93,11 +93,11 @@ namespace CeasarCipher
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (Char.IsWhiteSpace(text[i]))
+                if (Char.IsWhiteSpace(text[i])) //Whitespace
                 {
                     ch = text[i];
                 }
-                else if (Char.IsUpper(text[i]))
+                else if (Char.IsUpper(text[i])) //Upper case letters
                 {
                     if ((int)text[i] + key < 65)
                     {
@@ -108,7 +108,7 @@ namespace CeasarCipher
                         ch = (char)(((int)text[i] + key - 65) % 26 + 65);
                     }
                 }
-                else
+                else //Lower case letters
                 {
                     if ((int)text[i] + key < 97)
                     {
