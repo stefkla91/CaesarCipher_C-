@@ -1,21 +1,21 @@
 ﻿using System;
 
 
-namespace CeasarCipher
+namespace CaesarCipher
 {
     class Program
     {
         static void Main(string[] args)
         {
             bool abortSignal = false;
-            Console.WriteLine("Welcome to the Ceaser Cipher App!");
+            Console.WriteLine("Welcome to the Caesar Cipher App!");
 
             while (!abortSignal)
             {
                 Console.WriteLine("What do you want to do ? ");
 
-                Console.WriteLine("\ta - Encode");
-                Console.WriteLine("\tb - Decode");
+                Console.WriteLine("\ta - Encrypt");
+                Console.WriteLine("\tb - Decrypt");
                 Console.WriteLine("\tq - Quit");
 
                 switch (Console.ReadLine().ToLower())
@@ -38,7 +38,7 @@ namespace CeasarCipher
             Environment.Exit(0);
         }
         /// <summary>
-        ///     Executes the Encoding/Decoding procedure
+        ///     Executes the Encrypt/Decrypt procedure
         /// </summary>
         /// <param name="mode">Mode input - 0=Encode, 1=Decode</param>
         static void Run(int mode)
@@ -79,7 +79,7 @@ namespace CeasarCipher
         /// <summary>
         ///     Applies the Caesar Cipher
         ///     
-        ///     Encoding and Decoding is the same mathematical process. 
+        ///     Encrypt and Decrypt is the same mathematical process. 
         ///     Only the "direction" of the key changes
         ///     Note: Can be encoded/decoded in either direction by the use of a negative key
         /// </summary>
